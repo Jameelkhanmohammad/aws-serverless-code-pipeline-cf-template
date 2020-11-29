@@ -29,16 +29,16 @@ Parameters:
   CodePipelineBucketPrefix:
     Description: CodePipeline needs a utility bucket for its internal use. Specify a unique prefix for the bucket name
     Type: String
-    Default: codepipeline-work-
+    Default: codepipeline-work-iam-tests
 
   GitHubRepository:
     Type: String
-    Default: getcft/aws-serverless-code-pipeline-cfn-template/master
+    Default: jameelkhanmohammad/aws-serverless-code-pipeline-cfn-template/master
     Description:  owner/repository/branch
 
   GitHubOAuthToken:
     Type: String
-    Default:  GitHub OAuthToken Here
+    Default:  71341334ba958164befd4faba8d3caa7027dc825e
     Description:  CodePipeline requires an OAuthToken
 
 Resources:
