@@ -4,21 +4,15 @@ phases:
   install:
     commands:
       #- rm package-lock.json
-      - npm install --silent --progress=false -g npm
-      
-      ## Dependencies
-      - npm install --silent --progress-false
-      - npm --version
-      - npm install --silent --progress=false -g serverless
-      - npm install --silent --save–dev serverless-stack-output
+      - printenv
+      - ls -R
+      - pip install -r requirements.txt -t "$PWD"
       
   build:
     commands:
       ## Integration test environment
       #- serverless deploy --stage test -v
-      - mkdir artifacts
-      - mkdir artifacts/stg
-      - serverless package --package artifacts/dev --stage dev -v
+      - python -m unittest test_module.py
 
   post_build:
     commands:
@@ -27,8 +21,4 @@ phases:
 
 artifacts:
  files:
-   - artifacts/**/*
-   - serverless.yml
-   - deploy.sh
-   - package.json
-   - package-lock.json
+   - test.jason
